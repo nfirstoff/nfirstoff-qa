@@ -87,6 +87,7 @@ export const profile = {
         { name: "Azure DevOps", level: 85 },
         { name: "Chrome DevTools", level: 95 },
         { name: "Proxy Tools", level: 75 },
+        { name: "Playwright", level: 30 },
       ],
     },
     {

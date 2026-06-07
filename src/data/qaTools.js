@@ -36,6 +36,25 @@ export const qaTools = [
       "SQL is essential for validating data flows, finding inconsistencies that UI testing misses, and confirming that financial data is accurate from end to end.",
   },
   {
+    id: "git-github",
+    name: "Git & GitHub",
+    icon: "GitBranch",
+    color: "#F1502F",
+    realUsage:
+      "Version control for personal projects, QA utilities, and experiment code, including public repositories and shared examples for teams.",
+    exampleInvestigation:
+      "Used Git branches and commit history to isolate a regression in a test helper script: compared previous versions, identified the exact change that broke a payment verification query, and restored a working variant while preparing a cleaner fix.",
+    typicalTasks: [
+      "Hosting and maintaining public repositories with QA tools and examples",
+      "Committing and reviewing changes to test scripts and utilities",
+      "Creating branches for experiments and proof-of-concept implementations",
+      "Using pull requests to track review comments and change history",
+      "Cloning and exploring open-source projects to learn patterns and best practices",
+    ],
+    whyItMatters:
+      "Consistent use of Git and GitHub over two years keeps QA-related code, utilities, and experiments transparent, reproducible, and easy to share with developers and future employers.",
+  },
+  {
     id: "jira",
     name: "Jira & Azure DevOps",
     icon: "Jira",
@@ -164,5 +183,23 @@ export const qaTools = [
     ],
     whyItMatters:
       "This AI toolbox helps me move faster from problem to experiment: I can decompose complex incidents, validate ideas against documentation, and quickly prototype code or queries, while still keeping human control over final test design and verification.",
+  },
+  {
+    id: "playwright",
+    name: "Playwright",
+    icon: "Play",
+    color: "#45BA4B",
+    realUsage:
+      "Basic Playwright knowledge for simple UI automation, locator-based checks, assertions, and support of end-to-end testing workflows.",
+    exampleInvestigation:
+      "Used Playwright to write a simple end-to-end script verifying a payment form flow: filled card fields, submitted the form, and asserted the success message appeared, helping catch a regression in form validation before release.",
+    typicalTasks: [
+      "Writing basic locator-based UI checks for critical user paths",
+      "Using Playwright assertions to validate page state and element visibility",
+      "Supporting end-to-end smoke tests for key payment flows",
+      "Exploring Playwright test runner for structured test organization",
+    ],
+    whyItMatters:
+      "Even at a fundamental level, Playwright adds automation capabilities to a manual QA toolkit — enabling quick smoke checks, repeatable form validations, and a foundation to grow into more advanced test automation.",
   },
 ]
