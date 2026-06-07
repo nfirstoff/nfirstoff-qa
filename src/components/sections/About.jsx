@@ -19,7 +19,7 @@ export default function About() {
           >
             <div className="relative mx-auto aspect-square w-64 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm sm:w-72 lg:w-full">
               <img
-                src="/photo.jpg"
+                src={`${import.meta.env.BASE_URL}photo.jpg`}
                 alt="Mykola Firstov"
                 className="h-full w-full object-cover"
                 loading="lazy"
