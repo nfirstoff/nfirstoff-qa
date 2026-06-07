@@ -1,16 +1,20 @@
-# React + Vite
+# Mykola Firstov — QA Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Персональный сайт-портфолио Manual QA Engineer, специализирующегося на fintech и payment systems.
 
-Currently, two official plugins are available:
+| Параметр | Значение |
+|----------|----------|
+| URL | https://nfirstoff.github.io/nfirstoff-qa/ |
+| Репозиторий | github.com/nfirstoff/nfirstoff-qa |
+| Стек | React 19 + Vite 8 + Tailwind CSS 4 + Framer Motion + Lucide React |
+| Деплой | GitHub Actions → GitHub Pages |
+| Язык | Английский |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Команды
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run dev       # Локальный сервер (http://localhost:5173)
+npm run build     # Сборка в dist/
+npm run lint      # ESLint
+npm run preview   # Превью собранного билда
+```

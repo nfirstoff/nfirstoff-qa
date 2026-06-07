@@ -11,7 +11,7 @@ export default function Availability() {
       <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="Open to Opportunities"
-          subtitle="Currently available for QA roles in fintech and payment systems"
+          subtitle="Focused on manual QA for fintech and payment systems"
         />
 
         <motion.div
@@ -27,7 +27,7 @@ export default function Availability() {
                 <h3 className="text-lg font-semibold text-gray-900">{profile.name}</h3>
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                  <span className="text-xs font-medium text-emerald-700">Available</span>
+                  <span className="text-xs font-medium text-emerald-700">Fintech / Payments QA</span>
                 </div>
               </div>
               <p className="text-sm text-gray-500 mt-0.5">{profile.title}</p>
@@ -96,7 +96,7 @@ export default function Availability() {
             <div className="border-t border-gray-200 bg-gray-50 px-6 py-3">
               <div className="flex items-center justify-center gap-1.5 text-xs text-gray-500">
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-500" />
-                Ready for full-time, contract, or freelance opportunities in fintech / payments
+                Interested in full-time, contract, or freelance work in fintech / payments
               </div>
             </div>
           </div>

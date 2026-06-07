@@ -59,18 +59,18 @@ export const profile = {
       impact: "Reduced financial inconsistencies, prevented fraud scenarios",
     },
     {
-      title: "Backoffice CRM for Trading",
+      title: "Trading Website & CRM Ecosystem",
       description:
-        "Validated platform-CRM synchronization, internal tools, reporting features, and financial automation flows for support and risk teams.",
-      tags: ["CRM", "Automation", "Reporting", "Synchronization"],
-      impact: "Better data consistency, fewer operational errors",
+        "Validated end-to-end flows across websites, article and landing pages, account areas, deposit and withdrawal journeys, webtrader/desktop terminal access, and CRM systems that store, synchronize, and manage client data.",
+      tags: ["Websites", "Trading", "Payments", "CRM Sync"],
+      impact: "Improved consistency across website, trading, payment, and CRM flows; reduced cross-system errors in client account and transaction handling.",
     },
     {
       title: "Payment Gateway (B2B/B2C)",
       description:
-        "End-to-end payment flow testing across multiple providers. Cached state, subscriptions, invoicing, hosted payment pages, and callback security validation.",
-      tags: ["Payments", "B2B", "B2C", "Security"],
-      impact: "Improved payment reliability, stronger fraud prevention",
+        "Worked on end-to-end testing of a multi-provider payment orchestration platform covering card payments, alternative methods, subscriptions, invoicing, and hosted payment pages for online businesses.",
+      tags: ["Payments", "Subscriptions", "E-commerce", "SaaS", "Security", "Crypto"],
+      impact: "Improved payment flow stability, fewer transaction inconsistencies, and stronger protection against incorrect or duplicate charges.",
     },
     {
       title: "Cryptocurrency Processing Platform",
@@ -142,7 +142,7 @@ export const profile = {
     { name: "Onboarding Guides", desc: "New joiner documentation for tools, processes, and project context" },
     { name: "Communication Guides", desc: "Structured templates for cross-team and stakeholder updates" },
   ],
-  contactNote: "Available for full-time, contract, or freelance QA engineering roles — especially in fintech, payments, and crypto.",
+  contactNote: "Primarily focused on QA engineering in fintech, payments, and crypto (full-time, contract, or freelance).",
 
   languages: [
     { name: "Ukrainian", level: "Native" },
@@ -152,7 +152,7 @@ export const profile = {
 
   availability: {
     openTo: ["Remote", "Hybrid", "Fintech", "SaaS", "Payment Systems"],
-    status: "Available for opportunities",
+    status: "Fintech & Payments QA",
   },
 
   metrics: [
