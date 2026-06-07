@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { MapPin, Globe, Briefcase, Download, Mail, ExternalLink, CheckCircle } from "lucide-react"
+import { Globe, Briefcase, Download, Mail, ExternalLink, CheckCircle } from "lucide-react"
 import SectionTitle from "../ui/SectionTitle"
 import Button from "../ui/Button"
 import Badge from "../ui/Badge"
@@ -10,8 +10,8 @@ export default function Availability() {
     <section id="availability" className="relative px-4 py-24 sm:py-32 bg-gray-50/50">
       <div className="mx-auto max-w-6xl">
         <SectionTitle
-          title="Open to Opportunities"
-          subtitle="Focused on manual QA for fintech and payment systems"
+          title="Professional Focus"
+          subtitle="Manual QA for fintech, payment orchestration, crypto payments, and SaaS platforms"
         />
 
         <motion.div
@@ -27,22 +27,14 @@ export default function Availability() {
                 <h3 className="text-lg font-semibold text-gray-900">{profile.name}</h3>
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                  <span className="text-xs font-medium text-emerald-700">Fintech / Payments QA</span>
+                  <span className="text-xs font-medium text-emerald-700">Product-focused QA</span>
                 </div>
               </div>
               <p className="text-sm text-gray-500 mt-0.5">{profile.title}</p>
             </div>
 
             <div className="p-6 space-y-5">
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div className="flex items-start gap-3">
-                  <MapPin className="h-4 w-4 text-brand-600 mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Location</p>
-                    <p className="text-sm font-medium text-gray-900 mt-0.5">{profile.location}</p>
-                  </div>
-                </div>
-
+              <div className="grid gap-4 sm:grid-cols-2">
                 <div className="flex items-start gap-3">
                   <Globe className="h-4 w-4 text-brand-600 mt-0.5 shrink-0" />
                   <div>
@@ -60,7 +52,7 @@ export default function Availability() {
                 <div className="flex items-start gap-3">
                   <Briefcase className="h-4 w-4 text-brand-600 mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Open to</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Collaboration Mode</p>
                     <div className="mt-1 flex flex-wrap gap-1.5">
                       {profile.availability.openTo.map((item) => (
                         <Badge key={item} variant="brand">{item}</Badge>
@@ -96,7 +88,7 @@ export default function Availability() {
             <div className="border-t border-gray-200 bg-gray-50 px-6 py-3">
               <div className="flex items-center justify-center gap-1.5 text-xs text-gray-500">
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-500" />
-                Interested in full-time, contract, or freelance work in fintech / payments
+                Full-time · Contract · Freelance — fintech, payments, crypto, SaaS, B2B
               </div>
             </div>
           </div>

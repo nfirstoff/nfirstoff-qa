@@ -1,4 +1,4 @@
-import { ArrowUp, Mail, MapPin } from "lucide-react"
+import { ArrowUp, Mail } from "lucide-react"
 import { profile } from "../../data/profile"
 
 export default function Footer() {
@@ -53,10 +53,7 @@ export default function Footer() {
           <p className="text-xs text-gray-400">
             &copy; {new Date().getFullYear()} {profile.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-xs text-gray-400">
-            <MapPin className="h-3 w-3" />
-            <span>{profile.location}</span>
-          </div>
+
         </div>
       </div>
     </footer>

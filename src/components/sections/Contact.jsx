@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Mail, MapPin, Phone, ArrowRight } from "lucide-react"
+import { Mail, ArrowRight } from "lucide-react"
 import SectionTitle from "../ui/SectionTitle"
 import Button from "../ui/Button"
 import { profile } from "../../data/profile"
@@ -54,31 +54,6 @@ export default function Contact() {
                   >
                     {profile.email}
                   </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-900">Phone</h4>
-                  <a
-                    href={`tel:${profile.phone}`}
-                    className="text-sm text-gray-500 transition-colors hover:text-brand-600"
-                  >
-                    {profile.phone}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
-                  <MapPin className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-900">Location</h4>
-                  <p className="text-sm text-gray-500">{profile.location}</p>
                 </div>
               </div>
 

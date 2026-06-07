@@ -73,7 +73,6 @@ export default function Hero() {
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             Fintech & Payment Systems QA
           </span>
-          <span>{profile.location}</span>
           <span className="hidden sm:inline">{profile.email}</span>
         </motion.div>
       </div>

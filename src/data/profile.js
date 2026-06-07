@@ -2,9 +2,7 @@ export const profile = {
   name: "Mykola Firstov",
   title: "Manual QA Engineer",
   tagline: "Fintech & Payment Systems",
-  location: "Wrocław, Poland",
   email: "nfirstoff@gmail.com",
-  phone: "+48 795 055 096",
   linkedin: "https://linkedin.com/in/nfirstoff/",
   summary:
     "Manual QA Engineer with 4+ years of commercial experience in fintech, SaaS, e-commerce, and crypto-related products across web, mobile, and desktop platforms. Core focus on payment systems, trading platforms, cryptocurrency processing, back-office CRM systems, data integrity, and third-party integrations. Known for high ownership as the sole QA on high-load fintech projects.",
@@ -151,7 +149,7 @@ export const profile = {
   ],
 
   availability: {
-    openTo: ["Remote", "Hybrid", "Fintech", "SaaS", "Payment Systems"],
+    openTo: ["Remote", "Hybrid", "Fintech", "SaaS", "Crypto", "Payment Orchestration"],
     status: "Fintech & Payments QA",
   },
 
