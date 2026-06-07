@@ -47,7 +47,6 @@ export default function QAToolbox() {
                     </div>
                     <div>
                       <h3 className="text-sm font-semibold text-gray-900">{tool.name}</h3>
-                      <p className="text-xs text-gray-400">Click to expand</p>
                     </div>
                   </div>
                   <ChevronDown

@@ -126,4 +126,42 @@ export const qaTools = [
     whyItMatters:
       "Proxy tools reveal what truly travels over the network. They help identify security gaps, validation weaknesses, and timing-related issues that other tools cannot catch.",
   },
+  {
+    id: "evidence-tools",
+    name: "Evidence Tools",
+    icon: "Camera",
+    color: "#7C3AED",
+    realUsage:
+      "Daily creation of clear, reproducible evidence for bugs, UX issues, and payment flow edge cases across web and backend scenarios.",
+    exampleInvestigation:
+      "Documented a payment failure sequence by combining annotated screenshots of each UI step (PixelTaken, Flameshot) with a short LICEcap GIF showing the full user journey and a Jam session capturing console and network logs, allowing developers to reproduce and fix the bug without additional clarification.",
+    typicalTasks: [
+      "Capturing step-by-step screenshots for bug reports",
+      "Recording short GIFs of unstable flows and visual glitches",
+      "Highlighting and annotating problematic UI elements or states",
+      "Logging browser console and network activity with Jam for additional context",
+      "Attaching structured visual evidence directly to Jira or Azure DevOps tickets",
+    ],
+    whyItMatters:
+      "This evidence stack allows me to provide developers with precise, visual, and technical context, reducing back-and-forth questions and speeding up both reproduction and fix verification for critical fintech incidents.",
+  },
+  {
+    id: "ai-assistants",
+    name: "AI Assistants",
+    icon: "Sparkles",
+    color: "#10B981",
+    realUsage:
+      "Regular use of AI assistants for complex analysis, research, and code-related tasks: Claude for deep reasoning and documentation, Perplexity for agent-style investigations, and code-oriented models (Codex, OpenCode, Antigravity) for generating and refining scripts, utilities, and test helpers.",
+    exampleInvestigation:
+      "Used Claude to break down a multi-provider payment incident into hypotheses and test ideas, then leveraged Perplexity in an agent workflow to explore API documentation and provider constraints, and finally applied a code-generation model to build a small Python harness that reproduced the edge case across sandbox environments.",
+    typicalTasks: [
+      "Clarifying complex fintech flows, API contracts, and retry policies with Claude",
+      "Using Perplexity as an agent to explore documentation, logs, and change history for incidents",
+      "Drafting SQL queries, data validation scripts, and small utilities with code-generation models",
+      "Generating skeletons for automated tests or Postman pre-scripts and refining them manually",
+      "Brainstorming alternative test strategies, risk areas, and regression scope before releases",
+    ],
+    whyItMatters:
+      "This AI toolbox helps me move faster from problem to experiment: I can decompose complex incidents, validate ideas against documentation, and quickly prototype code or queries, while still keeping human control over final test design and verification.",
+  },
 ]

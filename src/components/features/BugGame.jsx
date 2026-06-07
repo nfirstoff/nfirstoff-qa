@@ -128,7 +128,7 @@ export default function BugGame() {
                       <div key={field.label} className="flex items-center justify-between gap-2">
                         <span className="text-xs text-gray-500">{field.label}</span>
                         <span className={`text-sm font-mono font-medium ${
-                          field.highlight ? "text-red-600 bg-red-50 px-1.5 py-0.5 rounded" : "text-gray-900"
+                          field.variant === "green" ? "text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded" : field.highlight ? "text-red-600 bg-red-50 px-1.5 py-0.5 rounded" : "text-gray-900"
                         }`}>
                           {field.value}
                         </span>

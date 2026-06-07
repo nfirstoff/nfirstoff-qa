@@ -7,8 +7,9 @@ export const bugGames = [
       fields: [
         { label: "Transaction Status", value: "Success", highlight: false },
         { label: "Amount", value: "€500", highlight: false },
+        { label: "Fee Rate", value: "2.5%", highlight: false },
         { label: "Fee", value: "€20", highlight: true },
-        { label: "Final Amount", value: "€510", highlight: true },
+        { label: "Final Amount", value: "€520", highlight: true },
       ],
     },
     question: "What looks suspicious?",
@@ -19,7 +20,7 @@ export const bugGames = [
       { id: "d", text: "Nothing, everything looks fine" },
     ],
     correctAnswer: "b",
-    explanation: "With a 2.5% fee rate on €500, the correct fee is €12.50, not €20. The final amount should be €512.50. The system calculated using 4% instead of 2.5%.",
+    explanation: "With a 2.5% fee rate on €500, the correct fee is €12.50, not €20. The final amount should be €512.50, not €520. The system applied a 4% rate instead of 2.5%.",
     whyItMatters: "Incorrect fee calculations affect customer trust, cause financial discrepancies, and require manual reconciliation. Overcharged customers may file disputes or chargebacks.",
     severity: "Medium",
     category: "Financial Calculations",
@@ -80,7 +81,7 @@ export const bugGames = [
     screen: {
       type: "subscription",
       fields: [
-        { label: "Subscription Status", value: "Active", highlight: true },
+        { label: "Subscription Status", value: "Active", highlight: true, variant: "green" },
         { label: "Last Payment", value: "Failed — Card Declined", highlight: true },
         { label: "Next Renewal", value: "Overdue by 5 days", highlight: false },
         { label: "Service Access", value: "Still active", highlight: false },
