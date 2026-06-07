@@ -37,39 +37,21 @@ export const qaTools = [
   },
   {
     id: "jira",
-    name: "Jira",
+    name: "Jira & Azure DevOps",
     icon: "Jira",
     color: "#0052CC",
-    realUsage: "Bug tracking, test management, and QA workflow organization in Agile teams.",
+    realUsage:
+      "Bug tracking, test management, and QA workflow organization across Agile and enterprise environments using Jira and Azure DevOps.",
     exampleInvestigation:
-      "Created structured bug reports with reproduction steps, environment details, logs, and severity. Maintained traceability between requirements, test cases, and defects.",
+      "Standardized and migrated test documentation from scattered spreadsheets into Azure DevOps Test Plans with linked requirements, reducing regression time by 30%. Created structured bug reports with reproduction steps, environment details, logs, and severity, maintaining full traceability from requirements through test execution to defect resolution.",
     typicalTasks: [
-      "Bug report creation and triage",
-      "Test case management",
-      "Sprint planning and tracking",
-      "QA workflow configuration",
-      "Dashboard and reporting",
+      "Structured bug reporting with reproduction steps, environment details, logs, and severity",
+      "Test plan creation, organization, and execution tracking",
+      "Full traceability from requirements through test cases to defect resolution",
+      "QA workflow configuration and release pipeline validation",
     ],
     whyItMatters:
-      "Jira keeps QA work organized, traceable, and transparent. Well-structured issues help developers understand and fix bugs faster, reducing time-to-resolution.",
-  },
-  {
-    id: "azure-devops",
-    name: "Azure DevOps",
-    icon: "AzureDevops",
-    color: "#0078D4",
-    realUsage: "Test planning, execution tracking, and release management for enterprise QA processes.",
-    exampleInvestigation:
-      "Standardized and migrated test documentation from scattered spreadsheets into Azure DevOps Test Plans. Created organized test suites with linked requirements, reducing regression time by 30%.",
-    typicalTasks: [
-      "Test plan creation and execution",
-      "Bug tracking and work item management",
-      "Release pipeline validation",
-      "Test case organization by feature area",
-      "Shared parameter management",
-    ],
-    whyItMatters:
-      "Azure DevOps provides enterprise-grade traceability from requirements through test execution to bug resolution, essential for regulated fintech environments.",
+      "Well-structured issues and organized test suites help developers understand and fix bugs faster, while enterprise-grade traceability ensures every requirement is covered and every defect is tracked through resolution — essential for regulated fintech environments.",
   },
   {
     id: "devtools",
@@ -92,21 +74,22 @@ export const qaTools = [
   },
   {
     id: "dbeaver",
-    name: "DBeaver",
+    name: "Databases",
     icon: "DBeaver",
     color: "#372923",
-    realUsage: "Database exploration, query execution, and cross-database comparison for data validation.",
+    realUsage:
+      "Day-to-day data validation, defect investigation, and cross-system consistency checks across PostgreSQL and MS SQL Server databases using SQL queries and a GUI client such as DBeaver.",
     exampleInvestigation:
-      "Used DBeaver to compare transaction records across MS SQL Server and PostgreSQL databases, identifying 12 records that existed in one but not the other due to a replication bug.",
+      "Investigated a transaction amount discrepancy between PostgreSQL (payment service) and MS SQL Server (CRM) by writing SQL queries to compare records across both systems. Used DBeaver to connect to both databases, ran JOIN and EXCEPT queries to isolate mismatched rows, and identified 23 records where the calculated fee differed due to a rounding rule applied only on the CRM side.",
     typicalTasks: [
-      "Database exploration and schema analysis",
-      "Complex query execution and debugging",
-      "Cross-database data comparison",
-      "Export/import for test data setup",
-      "ER diagram visualization",
+      "Schema analysis and understanding table relationships across PostgreSQL and MS SQL Server",
+      "Writing and debugging SQL queries for both platforms",
+      "Comparing datasets between environments and systems",
+      "Preparing and loading test data for regression scenarios",
+      "Visualizing relationships with ER diagrams where helpful",
     ],
     whyItMatters:
-      "DBeaver provides a unified interface for working with multiple database types, making it easier to validate data consistency across heterogeneous systems.",
+      "Strong database validation is critical in fintech because financial data integrity depends on consistent processing across heterogeneous systems. Writing SQL directly and using tools like DBeaver to unify access across PostgreSQL and MS SQL Server allows me to catch data mismatches, replication gaps, and logic errors that no UI test can detect.",
   },
   {
     id: "proxy",
@@ -144,6 +127,24 @@ export const qaTools = [
     ],
     whyItMatters:
       "This evidence stack allows me to provide developers with precise, visual, and technical context, reducing back-and-forth questions and speeding up both reproduction and fix verification for critical fintech incidents.",
+  },
+  {
+    id: "tms",
+    name: "TMS",
+    icon: "ClipboardList",
+    color: "#8B5CF6",
+    realUsage:
+      "Test case management, execution tracking, and reporting across manual and automated testing cycles using Allure TestOps and TestRail.",
+    exampleInvestigation:
+      "Used Allure TestOps to aggregate results from manual test runs and automated regression suites, creating a unified dashboard that reduced release assessment time by 40%. In TestRail, organized test cases into reusable suites with linked requirements for end-to-end traceability.",
+    typicalTasks: [
+      "Test case creation, organization, and versioning in TestRail",
+      "Aggregating manual and automated results in Allure TestOps dashboards",
+      "Linking test cases to requirements and defects for full traceability",
+      "Generating release readiness reports from execution data",
+    ],
+    whyItMatters:
+      "A dedicated TMS keeps test documentation structured, execution visible, and results measurable — critical for fintech releases where every scenario must be tracked and signed off.",
   },
   {
     id: "ai-assistants",

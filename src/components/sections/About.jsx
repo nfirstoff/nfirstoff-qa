@@ -3,6 +3,23 @@ import SectionTitle from "../ui/SectionTitle"
 import Badge from "../ui/Badge"
 import { profile } from "../../data/profile"
 
+function StatCard({ stat, index }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      className="rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm"
+    >
+      <div className="text-2xl font-bold text-brand-600 sm:text-3xl">
+        {stat.value}
+      </div>
+      <div className="mt-1 text-xs text-gray-500">{stat.label}</div>
+    </motion.div>
+  )
+}
+
 export default function About() {
   return (
     <section id="about" className="relative px-4 py-24 sm:py-32 bg-gray-50/50">
@@ -54,16 +71,8 @@ export default function About() {
             </div>
 
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-              {profile.stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm"
-                >
-                  <div className="text-2xl font-bold text-brand-600 sm:text-3xl">
-                    {stat.value}
-                  </div>
-                  <div className="mt-1 text-xs text-gray-500">{stat.label}</div>
-                </div>
+              {profile.stats.map((stat, i) => (
+                <StatCard key={stat.label} stat={stat} index={i} />
               ))}
             </div>
           </motion.div>

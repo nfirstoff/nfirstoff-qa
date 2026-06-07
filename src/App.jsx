@@ -12,6 +12,7 @@ import QASimulator from "./components/features/QASimulator"
 import TestingCoverage from "./components/features/TestingCoverage"
 import BugGame from "./components/features/BugGame"
 import QAToolbox from "./components/features/QAToolbox"
+import HowIUseAI from "./components/features/HowIUseAI"
 import InvestigationFlow from "./components/features/InvestigationFlow"
 import QADocs from "./components/features/QADocs"
 import Availability from "./components/features/Availability"
@@ -34,6 +35,7 @@ export default function App() {
         <TestingCoverage />
         <BugGame />
         <QAToolbox />
+        <HowIUseAI />
         <InvestigationFlow />
         <QADocs />
         <Availability />

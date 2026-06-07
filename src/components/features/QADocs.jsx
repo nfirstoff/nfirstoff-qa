@@ -121,19 +121,56 @@ function BugReportPreview({ doc }) {
 
 function ChecklistPreview({ doc }) {
   const data = doc.content
+  const [checked, setChecked] = useState({})
+
+  const getItemId = (sectionIdx, checkIdx) => `item-${sectionIdx}-${checkIdx}`
+
+  const totalItems = data.items.reduce((sum, s) => sum + s.checks.length, 0)
+  const allChecked = Object.values(checked).filter(Boolean).length === totalItems
+
+  const toggleCheck = (sectionIdx, checkIdx) => {
+    const id = getItemId(sectionIdx, checkIdx)
+    setChecked((prev) => ({ ...prev, [id]: !prev[id] }))
+  }
+
   return (
     <div className="space-y-4">
-      <h4 className="text-base font-semibold text-gray-900">{data.title}</h4>
+      <div className="flex items-center gap-3">
+        <h4 className={`text-base font-semibold transition-colors ${allChecked ? "text-emerald-600" : "text-gray-900"}`}>{data.title}</h4>
+        {allChecked && (
+          <span className="inline-block rounded-md bg-emerald-500 px-2.5 py-0.5 text-xs font-bold text-white">
+            Passed
+          </span>
+        )}
+      </div>
       {data.items.map((section, i) => (
         <div key={i}>
           <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1.5">{section.area}</p>
           <ul className="space-y-1">
-            {section.checks.map((check, j) => (
-              <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
-                <span className="mt-1 h-3.5 w-3.5 shrink-0 rounded border border-gray-300" />
-                {check}
-              </li>
-            ))}
+            {section.checks.map((check, j) => {
+              const id = getItemId(i, j)
+              const isChecked = !!checked[id]
+              return (
+                <li
+                  key={j}
+                  className="flex cursor-pointer items-start gap-2 rounded px-1 -mx-1 text-sm text-gray-600 transition-colors hover:bg-gray-50"
+                  onClick={() => toggleCheck(i, j)}
+                >
+                  <span
+                    className={`mt-1 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded border transition-colors ${
+                      isChecked ? "border-brand-500 bg-brand-500 text-white" : "border-gray-300"
+                    }`}
+                  >
+                    {isChecked && (
+                      <svg className="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                  </span>
+                  {check}
+                </li>
+              )
+            })}
           </ul>
         </div>
       ))}
