@@ -14,17 +14,6 @@ export default function Hero() {
       <div className="pointer-events-none absolute -right-32 bottom-1/4 h-80 w-80 rounded-full bg-blue-100/30 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-1.5 text-xs font-medium text-gray-600 shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" />
-            {profile.availability.status}
-          </div>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,9 +33,8 @@ export default function Hero() {
           className="mx-auto mt-4 max-w-2xl text-lg text-gray-500 sm:text-xl"
         >
           {profile.title} specializing in{" "}
-          <span className="font-semibold text-gray-900">{profile.tagline}</span>
-          . I ensure financial systems are reliable, secure, and
-          production-ready.
+          <span className="font-semibold text-gray-900">{profile.tagline}</span>.
+          <span className="block">I ensure financial systems are reliable, secure, and production-ready.</span>
         </motion.p>
 
         <motion.div

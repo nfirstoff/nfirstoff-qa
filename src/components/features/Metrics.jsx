@@ -11,7 +11,7 @@ function MetricCard({ metric, index }) {
       transition={{ duration: 0.4, delay: index * 0.08 }}
       className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-200"
     >
-      <div className="text-xl font-bold text-brand-600 sm:text-2xl break-words leading-tight">
+      <div className="text-xl font-bold text-brand-600 sm:text-2xl leading-tight">
         {metric.value}
       </div>
       <div className="mt-1 text-sm text-gray-500">{metric.label}</div>
