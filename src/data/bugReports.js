@@ -5,11 +5,11 @@ export const bugReports = [
     severity: "High",
     category: "State Management / Payment Processing",
     summary:
-      "Transaction creation became stuck on an endless loading state when processing payments through the virtual terminal.",
+      "Transaction creation became stuck on an endless loading state when processing payments through the payment processing screen.",
     tags: ["High Severity", "Payments", "UI", "State Issues"],
     sections: {
       reproduction: [
-        "Open virtual terminal",
+        "Open the payment processing screen",
         "Select payment processor",
         "Configure processor settings",
         "Submit transaction",
@@ -76,7 +76,7 @@ useEffect(() => {
         "Customers overcharged, leading to refund requests, chargebacks, loss of trust, and potential regulatory penalties for incorrect transaction processing.",
       technicalDetails: {
         apiExample: {
-          request: 'POST /api/v1/charge\nHeaders: {\n  "Idempotency-Key": "missing"\n}\nBody: {\n  "amount": 500,\n  "currency": "EUR",\n  "source": "card_123"\n}',
+          request: 'POST /api/v1/payments\nHeaders: {\n  "Idempotency-Key": "missing"\n}\nBody: {\n  "amount": 500,\n  "currency": "EUR",\n  "source": "card_token_xxx"\n}',
           response: '200 OK (both requests)\n{\n  "id": "ch_1",\n  "status": "succeeded"\n}\n{\n  "id": "ch_2",\n  "status": "succeeded"\n}',
         },
       },
@@ -96,11 +96,11 @@ useEffect(() => {
         "Navigate to CRM order details",
         "Observe payment status remains 'Pending'",
         "Refresh page — status still shows 'Pending'",
-        "Check database — payment_transactions table shows 'completed'",
+        "Check database — transactions table shows 'completed'",
       ],
       investigation: [
         { step: "Frontend inspection", detail: "UI displays status from CRM API response" },
-        { step: "API response validation", detail: "CRM API GET /orders/{id} returns status='pending'" },
+        { step: "API response validation", detail: "CRM API GET /api/crm/orders/{id} returns status='pending'" },
         { step: "Database inspection", detail: "Found payment record with status='completed' but CRM order record with status='pending'" },
         { step: "Webhook/event analysis", detail: "Payment service webhook was not received by CRM service" },
         { step: "Log analysis", detail: "Network timeout between payment service and CRM during event delivery" },
@@ -147,8 +147,8 @@ Payment Service --[webhook failed (timeout)]--> CRM --> Status stays 'Pending'
         "Customers see incorrect fee amounts, causing confusion and support inquiries. If confirmed, overcharged customers may request refunds.",
       technicalDetails: {
         apiExample: {
-          request: 'GET /api/v1/transaction/123/summary',
-          response: '{\n  "amount": 500,\n  "fee_percentage": 2.5,\n  "fee": 12.50,\n  "total": 512.50\n}',
+          request: 'GET /api/v1/transactions/{id}/summary',
+          response: '{\n  "amount": 500,\n  "fee_rate": 2.5,\n  "calculated_fee": 12.50,\n  "total": 512.50\n}',
         },
       },
     },
@@ -181,13 +181,13 @@ Payment Service --[webhook failed (timeout)]--> CRM --> Status stays 'Pending'
         "Financial reports show inflated revenue figures. Reconciliation becomes time-consuming. Automated financial processes produce incorrect outputs.",
       technicalDetails: {
         code: `// Add idempotency check:
-function handleWebhook(req, res) {
+function processIncomingEvent(req, res) {
   const idempotencyKey = req.headers['webhook-id']
-  if (await isProcessed(idempotencyKey)) {
+  if (await isDuplicateEvent(idempotencyKey)) {
     return res.status(200).json({ status: 'already_processed' })
   }
-  await processWebhook(req.body)
-  await markProcessed(idempotencyKey)
+  await handleEventPayload(req.body)
+  await markEventAsProcessed(idempotencyKey)
   res.status(200).json({ status: 'ok' })
 }`,
       },
@@ -222,18 +222,18 @@ function handleWebhook(req, res) {
       technicalDetails: {
         code: `// Before:
 try {
-  await chargeCustomer(subscription)
+  await processPayment(subscription)
 } catch (error) {
   // silent fail — nothing happens
 }
 
 // After:
 try {
-  await chargeCustomer(subscription)
+  await processPayment(subscription)
 } catch (error) {
-  await logError('renewal_failed', { subscriptionId, error })
-  await subscription.update({ status: 'payment_failed' })
-  await notifyUser(subscription.userId, 'payment_failed')
+  await logError('subscription_charge_failed', { subscriptionId, error })
+  await subscription.update({ status: 'charge_failed' })
+  await sendNotification(subscription.userId, 'charge_failed')
 }`,
       },
     },
