@@ -12,7 +12,7 @@ export const profile = {
     { value: "4.5+", label: "Years Experience" },
     { value: "4", label: "Industry Domains" },
     { value: "20+", label: "Tools & Technologies" },
-    { value: "10+", label: "Projects Delivered" },
+    { value: "50+", label: "Projects Delivered" },
   ],
   strengths: [
     "High Ownership",
