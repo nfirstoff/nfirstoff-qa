@@ -5,7 +5,7 @@ export const profile = {
   email: "nfirstoff@gmail.com",
   linkedin: "https://linkedin.com/in/nfirstoff/",
   summary:
-    "Manual QA Engineer with 4+ years of commercial experience in fintech, SaaS, e-commerce, and crypto-related products across web, mobile, and desktop platforms. Core focus on payment systems, trading platforms, cryptocurrency processing, back-office CRM systems, data integrity, and third-party integrations. Known for high ownership as the sole QA on high-load fintech projects.",
+    "Manual QA Engineer with 4+ years of commercial experience in fintech, SaaS, e-commerce, and crypto-related products across web, mobile, and desktop platforms. Core focus on payment systems, trading platforms, cryptocurrency processing, back-office CRM systems, data integrity, and third-party integrations. I take responsibility for end-to-end quality on high-load fintech projects.",
   aboutHighlight:
     "I ensure financial systems are reliable, payments flow correctly, and users have a seamless experience — one test case at a time.",
   stats: [
