@@ -3,6 +3,7 @@ import SectionTitle from "../ui/SectionTitle"
 import Badge from "../ui/Badge"
 import { profile } from "../../data/profile"
 
+
 function StatCard({ stat, index }) {
   return (
     <motion.div

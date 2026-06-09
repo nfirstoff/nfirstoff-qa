@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { ArrowDown, ArrowRight } from "lucide-react"
 import Button from "../ui/Button"
 import { profile } from "../../data/profile"
+import AboutTagsMarquee from "../features/AboutTagsMarquee"
 
 export default function Hero() {
   return (
@@ -40,8 +41,17 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.30 }}
+          className="mx-auto mt-4 max-w-lg"
+        >
+          <AboutTagsMarquee />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.36 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+          className="mt-6 flex flex-wrap items-center justify-center gap-3"
         >
           <Button href="#portfolio" variant="primary">
             <ArrowRight className="h-4 w-4" />
