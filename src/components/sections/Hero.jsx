@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute top-0 -left-32 h-96 w-96 rounded-full bg-brand-100/50 blur-3xl" />
       <div className="pointer-events-none absolute -right-32 bottom-1/4 h-80 w-80 rounded-full bg-blue-100/30 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
+      <div className="relative z-10 mx-auto max-w-4xl min-w-0 px-4 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.24 }}
-          className="mx-auto mt-4 max-w-2xl text-lg text-gray-500 sm:text-xl"
+          className="mx-auto mt-4 w-full max-w-2xl break-words text-base text-gray-500 sm:text-lg md:text-xl"
         >
           {profile.title} specializing in{" "}
           <span className="font-semibold text-gray-900">{profile.tagline}</span>.

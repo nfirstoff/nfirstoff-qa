@@ -15,7 +15,7 @@ export default function Footer() {
               <span className="text-brand-600">MF</span>
               <span className="ml-0.5">.</span>
             </span>
-            <p className="mt-1 text-sm text-gray-500">
+            <p className="mt-1 text-sm break-words text-gray-500">
               Manual QA Engineer — Fintech & Payment Systems
             </p>
           </div>
