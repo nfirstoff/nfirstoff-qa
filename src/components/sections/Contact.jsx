@@ -25,7 +25,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative px-4 py-24 sm:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white via-brand-50/20 to-white" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[#007aff]/5 to-transparent" />
 
       <div className="relative mx-auto max-w-6xl">
         <SectionTitle
@@ -41,23 +41,23 @@ export default function Contact() {
             transition={{ duration: 0.4 }}
             className="lg:col-span-2"
           >
-            <div className="space-y-5 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+            <div className="space-y-5 rounded-2xl glass-card p-6 sm:p-8">
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#007aff]/10 text-[#007aff]">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-gray-900">Email</h4>
                   <a
                     href={`mailto:${profile.email}`}
-                    className="text-sm text-gray-500 transition-colors hover:text-brand-600"
+                    className="text-sm text-gray-500 transition-colors hover:text-[#007aff]"
                   >
                     {profile.email}
                   </a>
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 pt-5">
+              <div className="border-t border-white/40 pt-5">
                 <p className="text-sm italic text-gray-500">
                   {profile.contactNote}
                 </p>
@@ -73,7 +73,7 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="lg:col-span-3"
           >
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+            <div className="rounded-2xl glass-card p-6 sm:p-8">
               <div className="mb-5 grid gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-gray-500">
@@ -85,7 +85,7 @@ export default function Contact() {
                     type="text"
                     required
                     placeholder="Your name"
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none transition-colors focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
+                    className="w-full rounded-xl glass-input px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:border-[#007aff]/30 focus:ring-2 focus:ring-[#007aff]/20"
                   />
                 </div>
                 <div>
@@ -98,7 +98,7 @@ export default function Contact() {
                     type="email"
                     required
                     placeholder="your@email.com"
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none transition-colors focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
+                    className="w-full rounded-xl glass-input px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:border-[#007aff]/30 focus:ring-2 focus:ring-[#007aff]/20"
                   />
                 </div>
               </div>
@@ -112,7 +112,7 @@ export default function Contact() {
                   required
                   rows={5}
                   placeholder="Tell me about your project or opportunity..."
-                  className="w-full resize-none rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none transition-colors focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
+                  className="w-full resize-none rounded-xl glass-input px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:border-[#007aff]/30 focus:ring-2 focus:ring-[#007aff]/20"
                 />
               </div>
               <Button type="submit" variant="primary" className="w-full justify-center sm:w-auto">

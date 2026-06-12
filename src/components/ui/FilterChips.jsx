@@ -5,10 +5,10 @@ export default function FilterChips({ filters, active, onChange }) {
         <button
           key={filter}
           onClick={() => onChange(filter === active ? null : filter)}
-          className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-all duration-200 ${
+          className={`rounded-full px-3.5 py-1.5 text-xs font-medium backdrop-blur-md transition-all duration-200 ${
             active === filter
-              ? "bg-brand-600 text-white shadow-sm"
-              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              ? "bg-[#007aff] text-white shadow-sm"
+              : "bg-white/65 text-gray-600 hover:bg-white/90 border border-white/60"
           }`}
         >
           {filter}

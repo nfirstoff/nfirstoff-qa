@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useRef, useEffect } from "react"
+import { motion } from "framer-motion"
 import { ChevronDown, Search, Bug, AlertTriangle, Code2, Network, AlertCircle } from "lucide-react"
 import SectionTitle from "../ui/SectionTitle"
 import Badge from "../ui/Badge"
@@ -14,32 +14,37 @@ function SeverityBadge({ severity }) {
 
 function ExpandableSection({ icon: Icon, title, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen)
+  const contentRef = useRef(null)
+  const [height, setHeight] = useState(0)
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(open ? contentRef.current.scrollHeight : 0)
+    }
+  }, [open])
+
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden">
+    <div className="border border-white/60 rounded-xl bg-white/30 backdrop-blur-sm">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-2 bg-gray-50 px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 hover:bg-gray-100 transition-colors"
+        className="flex w-full items-center justify-between gap-2 bg-white/40 px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-600 hover:bg-white/60 transition-colors rounded-xl"
       >
         <span className="flex items-center gap-2">
-          {Icon && <Icon className="h-3.5 w-3.5 text-brand-600" />}
+          {Icon && <Icon className="h-3.5 w-3.5 text-[#007aff]" />}
           {title}
         </span>
         <ChevronDown className={`h-3.5 w-3.5 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            key="content"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="overflow-hidden"
-          >
-            <div className="px-3 py-3 text-sm text-gray-600 space-y-2">{children}</div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        initial={false}
+        animate={{ height }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+        className="overflow-hidden"
+      >
+        <div ref={contentRef} className="px-3 py-3 text-sm text-gray-600 space-y-2">
+          {children}
+        </div>
+      </motion.div>
     </div>
   )
 }
@@ -59,7 +64,7 @@ export default function BugReportGallery() {
   })
 
   return (
-    <section id="bugs" className="relative px-4 py-24 sm:py-32 bg-gray-50/50">
+    <section id="bugs" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="Real Bugs I Investigated"
@@ -90,12 +95,12 @@ export default function BugReportGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4 }}
-              className="rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
+              className="rounded-2xl glass-card transition-all duration-200 overflow-hidden"
             >
               <div className="p-5">
                 <div className="mb-3 flex items-start justify-between gap-3">
                   <div className="flex items-center gap-2">
-                    <Bug className="h-4 w-4 text-brand-600 shrink-0 mt-0.5" />
+                    <Bug className="h-4 w-4 text-[#007aff] shrink-0 mt-0.5" />
                     <h3 className="text-sm font-semibold text-gray-900 leading-snug">
                       {report.title}
                     </h3>
@@ -143,13 +148,13 @@ export default function BugReportGallery() {
                   </ExpandableSection>
 
                   <ExpandableSection icon={Search} title="Root Cause">
-                    <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs text-amber-800">
+                    <div className="rounded-xl bg-[#ff9500]/10 border border-[#ff9500]/20 p-3 text-xs text-amber-700 backdrop-blur-sm">
                       <p>{report.sections.rootCause}</p>
                     </div>
                   </ExpandableSection>
 
                   <ExpandableSection icon={AlertCircle} title="Business Impact">
-                    <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-xs text-red-800">
+                    <div className="rounded-xl bg-[#ff3b30]/10 border border-[#ff3b30]/20 p-3 text-xs text-red-700 backdrop-blur-sm">
                       <div className="flex items-start gap-2">
                         <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
                         <p>{report.sections.businessImpact}</p>
@@ -163,7 +168,7 @@ export default function BugReportGallery() {
                         {report.sections.technicalDetails.code && (
                           <div>
                             <p className="text-xs font-medium text-gray-700 mb-1">Code:</p>
-                            <pre className="rounded-lg bg-gray-900 p-3 text-xs text-green-400 overflow-x-auto font-mono leading-relaxed">
+                            <pre className="rounded-xl bg-gray-900/90 backdrop-blur-sm p-3 text-xs text-green-400 overflow-x-auto font-mono leading-relaxed border border-white/10">
                               {report.sections.technicalDetails.code}
                             </pre>
                           </div>
@@ -172,13 +177,13 @@ export default function BugReportGallery() {
                           <div className="grid gap-2 sm:grid-cols-2">
                             <div>
                               <p className="text-xs font-medium text-gray-700 mb-1">Request:</p>
-                              <pre className="rounded-lg bg-gray-900 p-3 text-xs text-blue-300 overflow-x-auto font-mono leading-relaxed">
+                              <pre className="rounded-xl bg-gray-900/90 backdrop-blur-sm p-3 text-xs text-blue-300 overflow-x-auto font-mono leading-relaxed border border-white/10">
                                 {report.sections.technicalDetails.apiExample.request}
                               </pre>
                             </div>
                             <div>
                               <p className="text-xs font-medium text-gray-700 mb-1">Response:</p>
-                              <pre className="rounded-lg bg-gray-900 p-3 text-xs text-green-300 overflow-x-auto font-mono leading-relaxed">
+                              <pre className="rounded-xl bg-gray-900/90 backdrop-blur-sm p-3 text-xs text-green-300 overflow-x-auto font-mono leading-relaxed border border-white/10">
                                 {report.sections.technicalDetails.apiExample.response}
                               </pre>
                             </div>

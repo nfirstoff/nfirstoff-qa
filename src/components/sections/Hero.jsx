@@ -10,9 +10,7 @@ export default function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-50/50 via-white to-white" />
-      <div className="pointer-events-none absolute top-0 -left-32 h-96 w-96 rounded-full bg-brand-100/50 blur-3xl" />
-      <div className="pointer-events-none absolute -right-32 bottom-1/4 h-80 w-80 rounded-full bg-blue-100/30 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-pink-200/20 via-transparent to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-4xl min-w-0 px-4 text-center">
         <motion.h1
@@ -22,7 +20,7 @@ export default function Hero() {
           className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-gray-900"
         >
           {profile.name.split(" ")[0]}{" "}
-          <span className="text-brand-600">
+          <span className="bg-gradient-to-r from-[#007aff] to-[#30b0c7] bg-clip-text text-transparent">
             {profile.name.split(" ")[1]}
           </span>
         </motion.h1>

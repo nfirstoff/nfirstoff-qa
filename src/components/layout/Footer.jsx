@@ -7,12 +7,12 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t border-gray-200 bg-gray-50">
+    <footer className="border-t border-white/60 bg-white/30 backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="text-center md:text-left">
             <span className="text-lg font-bold text-gray-900">
-              <span className="text-brand-600">MF</span>
+              <span className="text-[#007aff]">MF</span>
               <span className="ml-0.5">.</span>
             </span>
             <p className="mt-1 text-sm break-words text-gray-500">
@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <a
               href={`mailto:${profile.email}`}
-              className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-400 transition-all duration-200 hover:border-brand-300 hover:text-brand-600 hover:bg-brand-50"
+              className="flex h-9 w-9 items-center justify-center rounded-xl glass-card text-gray-400 transition-all duration-200 hover:text-[#007aff]"
               aria-label="Email"
             >
               <Mail className="h-4 w-4" />
@@ -32,7 +32,7 @@ export default function Footer() {
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-400 transition-all duration-200 hover:border-brand-300 hover:text-brand-600 hover:bg-brand-50"
+              className="flex h-9 w-9 items-center justify-center rounded-xl glass-card text-gray-400 transition-all duration-200 hover:text-[#007aff]"
               aria-label="LinkedIn"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
@@ -41,7 +41,7 @@ export default function Footer() {
             </a>
             <button
               onClick={scrollToTop}
-              className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-400 transition-all duration-200 hover:border-brand-300 hover:text-brand-600 hover:bg-brand-50"
+              className="flex h-9 w-9 items-center justify-center rounded-xl glass-card text-gray-400 transition-all duration-200 hover:text-[#007aff]"
               aria-label="Scroll to top"
             >
               <ArrowUp className="h-4 w-4" />
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-gray-200 pt-6 md:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-white/40 pt-6 md:flex-row">
           <p className="text-xs text-gray-400">
             &copy; {new Date().getFullYear()} {profile.name}. All rights reserved.
           </p>

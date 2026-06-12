@@ -8,7 +8,7 @@ const projectIcons = [TrendingUp, Building2, CreditCard, Bitcoin]
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="relative px-4 py-24 sm:py-32 bg-gray-50/50">
+    <section id="portfolio" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="Portfolio"
@@ -26,10 +26,10 @@ export default function Portfolio() {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-200 hover:shadow-md hover:border-brand-200 sm:p-8"
+                className="group rounded-2xl glass-card p-6 transition-all duration-200 sm:p-8"
               >
                 <div className="mb-4 flex items-center justify-between">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#007aff]/10 text-[#007aff]">
                     <Icon className="h-5 w-5" />
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-gray-300 opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:text-brand-500" />
@@ -45,8 +45,8 @@ export default function Portfolio() {
                     <Badge key={tag} variant="default">{tag}</Badge>
                   ))}
                 </div>
-                <div className="rounded-lg bg-brand-50 border border-brand-100 px-3.5 py-2">
-                  <p className="text-xs font-medium text-brand-700">
+                <div className="rounded-xl bg-[#34c759]/10 border border-[#34c759]/15 px-3.5 py-2.5 backdrop-blur-sm">
+                  <p className="text-xs font-medium text-emerald-700">
                     Impact: {project.impact}
                   </p>
                 </div>

@@ -10,7 +10,7 @@ export default function InvestigationFlow() {
   const [activeStep, setActiveStep] = useState(null)
 
   return (
-    <section id="investigation" className="relative px-4 py-24 sm:py-32 bg-gray-50/50">
+    <section id="investigation" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="How I Investigate Issues"
@@ -19,7 +19,7 @@ export default function InvestigationFlow() {
 
         <div className="hidden lg:block">
           <div className="relative mx-auto max-w-5xl">
-            <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-gray-200" />
+            <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-white/50" />
 
             <div className="relative space-y-2">
               {investigationSteps.map((step, i) => {
@@ -36,15 +36,15 @@ export default function InvestigationFlow() {
                         viewport={{ once: true, margin: "-60px" }}
                         transition={{ duration: 0.4, delay: i * 0.08 }}
                         onClick={() => setActiveStep(isActive ? null : step.id)}
-                        className={`group w-full rounded-xl border p-4 text-left transition-all duration-200 ${
+                        className={`group w-full rounded-2xl p-4 text-left transition-all duration-200 ${
                           isActive
-                            ? "border-brand-300 bg-brand-50 shadow-sm"
-                            : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
+                            ? "glass-card-strong border-[#007aff]/20"
+                            : "glass-card"
                         }`}
                       >
                         <div className={`flex items-center gap-3 ${isLeft ? "flex-row-reverse" : ""}`}>
-                          <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors ${
-                            isActive ? "bg-brand-100 text-brand-600" : "bg-gray-100 text-gray-500 group-hover:bg-brand-50 group-hover:text-brand-600"
+                          <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
+                            isActive ? "bg-[#007aff]/10 text-[#007aff]" : "bg-white/50 text-gray-500 group-hover:bg-[#007aff]/10 group-hover:text-[#007aff]"
                           }`}>
                             <Icon className="h-5 w-5" />
                           </div>
@@ -65,11 +65,11 @@ export default function InvestigationFlow() {
                             className="overflow-hidden"
                           >
                             <div className={`mt-2 ${isLeft ? "text-right" : ""}`}>
-                              <div className={`inline-block rounded-lg border border-gray-200 bg-white p-3 text-left ${isLeft ? "" : ""}`}>
+                              <div className={`inline-block rounded-xl glass-card p-3 text-left ${isLeft ? "" : ""}`}>
                                 <ul className="space-y-1">
                                   {step.details.map((detail, j) => (
                                     <li key={j} className="flex items-start gap-2 text-xs text-gray-600">
-                                      <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />
+                                      <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007aff]" />
                                       {detail}
                                     </li>
                                   ))}
@@ -84,8 +84,8 @@ export default function InvestigationFlow() {
                     <div className="relative z-10 flex w-2/12 justify-center">
                       <div className={`flex h-8 w-8 items-center justify-center rounded-full border-2 text-xs font-bold transition-colors ${
                         isActive
-                          ? "border-brand-500 bg-brand-500 text-white"
-                          : "border-gray-300 bg-white text-gray-500"
+                          ? "border-[#007aff] bg-[#007aff] text-white"
+                          : "border-white/60 bg-white/65 text-gray-500"
                       }`}>
                         {i + 1}
                       </div>
@@ -112,17 +112,17 @@ export default function InvestigationFlow() {
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.3, delay: i * 0.05 }}
                   onClick={() => setActiveStep(isActive ? null : step.id)}
-                  className={`flex w-full items-center gap-3 rounded-xl border p-4 text-left transition-all duration-200 ${
+                  className={`flex w-full items-center gap-3 rounded-2xl p-4 text-left transition-all duration-200 ${
                     isActive
-                      ? "border-brand-300 bg-brand-50 shadow-sm"
-                      : "border-gray-200 bg-white hover:border-gray-300"
+                      ? "glass-card-strong border-[#007aff]/20"
+                      : "glass-card"
                   }`}
                 >
-                  <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-gray-600">
+                  <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/50 text-xs font-bold text-gray-600">
                     {i + 1}
                   </div>
-                  <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors ${
-                    isActive ? "bg-brand-100 text-brand-600" : "bg-gray-100 text-gray-500"
+                  <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
+                    isActive ? "bg-[#007aff]/10 text-[#007aff]" : "bg-white/50 text-gray-500"
                   }`}>
                     <Icon className="h-5 w-5" />
                   </div>
@@ -142,11 +142,11 @@ export default function InvestigationFlow() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <div className="ml-14 mt-2 border-l-2 border-brand-200 pl-4 py-1">
+                      <div className="ml-14 mt-2 border-l-2 border-[#007aff]/30 pl-4 py-1">
                         <ul className="space-y-1.5">
                           {step.details.map((detail, j) => (
                             <li key={j} className="flex items-start gap-2 text-xs text-gray-600">
-                              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />
+                              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007aff]" />
                               {detail}
                             </li>
                           ))}

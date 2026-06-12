@@ -49,7 +49,7 @@ export default function HowIUseAI() {
   }
 
   return (
-    <section id="ai-usage" className="relative px-4 py-24 sm:py-32 bg-gray-50/50">
+    <section id="ai-usage" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="How I Use AI in QA"
@@ -67,8 +67,8 @@ export default function HowIUseAI() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.3 }}
-                className={`rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-200 ${
-                  isExpanded ? "shadow-md" : "hover:shadow-md"
+                className={`rounded-2xl glass-card transition-all duration-200 ${
+                  isExpanded ? "shadow-lg" : ""
                 }`}
               >
                 <button
@@ -76,8 +76,8 @@ export default function HowIUseAI() {
                   className="flex w-full items-center justify-between p-5 text-left"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50">
-                      <Bot className="h-5 w-5 text-brand-600" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#007aff]/10">
+                      <Bot className="h-5 w-5 text-[#007aff]" />
                     </div>
                     <div>
                       <h3 className="text-sm font-semibold text-gray-900">{block.title}</h3>
@@ -99,7 +99,7 @@ export default function HowIUseAI() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <div className="border-t border-gray-100 px-5 py-4">
+                      <div className="border-t border-white/40 px-5 py-4">
                         <p className="text-sm text-gray-600 leading-relaxed">{block.body}</p>
                       </div>
                     </motion.div>

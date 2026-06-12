@@ -11,7 +11,7 @@ function StatCard({ stat, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm"
+      className="rounded-2xl glass-card p-4 text-center"
     >
       <div className="text-2xl font-bold text-brand-600 sm:text-3xl">
         {stat.value}
@@ -23,7 +23,7 @@ function StatCard({ stat, index }) {
 
 export default function About() {
   return (
-    <section id="about" className="relative px-4 py-24 sm:py-32 bg-gray-50/50">
+    <section id="about" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionTitle title="About Me" subtitle="A QA engineer passionate about quality in financial technology" />
 
@@ -35,7 +35,7 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-2"
           >
-            <div className="relative mx-auto aspect-square w-64 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm sm:w-72 lg:w-full">
+            <div className="relative mx-auto aspect-square w-64 overflow-hidden rounded-3xl glass-card sm:w-72 lg:w-full">
               <img
                 src={`${import.meta.env.BASE_URL}photo.jpg`}
                 alt="Mykola Firstov"
@@ -52,7 +52,7 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="lg:col-span-3"
           >
-            <blockquote className="mb-5 border-l-2 border-brand-500 pl-4 text-lg italic text-gray-600">
+            <blockquote className="mb-5 border-l-2 border-[#007aff] pl-4 text-lg italic text-gray-600">
               &ldquo;{profile.aboutHighlight}&rdquo;
             </blockquote>
 

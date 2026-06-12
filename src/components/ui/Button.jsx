@@ -2,15 +2,15 @@ import { motion } from "framer-motion"
 
 const variants = {
   primary:
-    "bg-brand-600 text-white hover:bg-brand-700 shadow-sm hover:shadow-md",
+    "bg-[#007aff] text-white hover:bg-[#0062cc] shadow-sm hover:shadow-md",
   secondary:
-    "bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200",
+    "bg-white/65 backdrop-blur-xl text-gray-700 hover:bg-white/80 border border-white/60 shadow-sm",
   outline:
-    "border-2 border-brand-600 text-brand-600 hover:bg-brand-50",
+    "border border-white/60 bg-white/40 backdrop-blur-xl text-[#007aff] hover:bg-white/70",
   ghost:
-    "text-gray-500 hover:text-gray-900 hover:bg-gray-100",
+    "text-gray-500 hover:text-gray-900 hover:bg-white/50 backdrop-blur-xl",
   light:
-    "bg-white text-brand-700 hover:bg-brand-50 border border-gray-200",
+    "bg-white/65 backdrop-blur-xl text-[#007aff] hover:bg-white/80 border border-white/60",
 }
 
 export default function Button({

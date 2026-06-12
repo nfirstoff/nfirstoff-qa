@@ -13,10 +13,10 @@ function DetailPanel({ area }) {
   const Icon = iconMap[area.icon] || Layout
 
   const sections = [
-    { icon: CheckCircle2, title: "What I Validated", items: area.validated, color: "text-emerald-600", bg: "bg-emerald-50" },
-    { icon: AlertTriangle, title: "Risks I Checked", items: area.risks, color: "text-amber-600", bg: "bg-amber-50" },
-    { icon: Bug, title: "Common Defects", items: area.defects, color: "text-red-600", bg: "bg-red-50" },
-    { icon: Target, title: "Testing Strategy", items: area.strategy, color: "text-brand-600", bg: "bg-brand-50" },
+    { icon: CheckCircle2, title: "What I Validated", items: area.validated, color: "text-[#34c759]", bg: "bg-[#34c759]/10" },
+    { icon: AlertTriangle, title: "Risks I Checked", items: area.risks, color: "text-[#ff9500]", bg: "bg-[#ff9500]/10" },
+    { icon: Bug, title: "Common Defects", items: area.defects, color: "text-[#ff3b30]", bg: "bg-[#ff3b30]/10" },
+    { icon: Target, title: "Testing Strategy", items: area.strategy, color: "text-[#007aff]", bg: "bg-[#007aff]/10" },
   ]
 
   return (
@@ -27,10 +27,10 @@ function DetailPanel({ area }) {
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-        <div className="border-b border-gray-200 bg-gradient-to-r from-brand-50 to-blue-50 px-6 py-5">
+      <div className="rounded-2xl glass-card overflow-hidden">
+        <div className="border-b border-white/60 bg-gradient-to-r from-[#007aff]/5 to-[#30b0c7]/5 px-6 py-5">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#007aff]/10 text-[#007aff]">
               <Icon className="h-5 w-5" />
             </div>
             <div>
@@ -81,7 +81,7 @@ export default function TestingCoverage() {
   const [selectedArea, setSelectedArea] = useState(coverageAreas[0])
 
   return (
-    <section id="coverage" className="relative px-4 py-24 sm:py-32 bg-gray-50/50">
+    <section id="coverage" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="Fintech Testing Coverage"
@@ -90,11 +90,11 @@ export default function TestingCoverage() {
 
         <div className="grid gap-6 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-              <div className="border-b border-gray-200 bg-gray-50 px-4 py-3">
+            <div className="rounded-2xl glass-card overflow-hidden">
+              <div className="border-b border-white/60 bg-white/40 px-4 py-3">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Coverage Areas</h3>
               </div>
-              <div className="divide-y divide-gray-100">
+              <div className="divide-y divide-white/30">
                 {coverageAreas.map((area) => {
                   const Icon = iconMap[area.icon] || Layout
                   const isActive = selectedArea?.id === area.id
@@ -104,13 +104,13 @@ export default function TestingCoverage() {
                       onClick={() => setSelectedArea(area)}
                       className={`flex w-full items-center gap-3 px-4 py-3 text-left text-sm transition-colors ${
                         isActive
-                          ? "bg-brand-50 text-brand-700 font-medium"
-                          : "text-gray-600 hover:bg-gray-50"
+                          ? "bg-[#007aff]/10 text-[#007aff] font-medium"
+                          : "text-gray-600 hover:bg-white/40"
                       }`}
                     >
-                      <Icon className={`h-4 w-4 shrink-0 ${isActive ? "text-brand-600" : "text-gray-400"}`} />
+                      <Icon className={`h-4 w-4 shrink-0 ${isActive ? "text-[#007aff]" : "text-gray-400"}`} />
                       <span>{area.name}</span>
-                      {isActive && <div className="ml-auto h-2 w-2 rounded-full bg-brand-500" />}
+                      {isActive && <div className="ml-auto h-2 w-2 rounded-full bg-[#007aff]" />}
                     </button>
                   )
                 })}

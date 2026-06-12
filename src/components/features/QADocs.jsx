@@ -112,7 +112,7 @@ function BugReportPreview({ doc }) {
       {data.logs && (
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Logs</p>
-          <pre className="rounded-lg bg-gray-900 p-3 text-xs text-green-400 font-mono overflow-x-auto">{data.logs}</pre>
+          <pre className="rounded-xl bg-gray-900/90 backdrop-blur-sm p-3 text-xs text-green-400 font-mono overflow-x-auto border border-white/10">{data.logs}</pre>
         </div>
       )}
     </div>
@@ -282,17 +282,17 @@ export default function QADocs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.3 }}
-                className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+                className="group rounded-2xl glass-card p-5 transition-all duration-200 cursor-pointer"
                 onClick={() => setModalDoc(doc.title === modalDoc ? null : doc.title)}
               >
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600 group-hover:bg-brand-100 transition-colors">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#007aff]/10 text-[#007aff] group-hover:bg-[#007aff]/20 transition-colors">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-sm font-semibold text-gray-900 mb-1">{doc.title}</h3>
                 <p className="text-xs text-gray-500 mb-3">{doc.description}</p>
                 <div className="flex items-center justify-between">
                   <Badge variant="default">{sample?.type || "Document"}</Badge>
-                  <Eye className="h-4 w-4 text-gray-300 group-hover:text-brand-500 transition-colors" />
+                  <Eye className="h-4 w-4 text-gray-300 group-hover:text-[#007aff] transition-colors" />
                 </div>
               </motion.div>
             )
@@ -305,7 +305,7 @@ export default function QADocs() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4 backdrop-blur-md"
               onClick={() => setModalDoc(null)}
             >
               <motion.div
@@ -313,12 +313,12 @@ export default function QADocs() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 10 }}
                 transition={{ duration: 0.2 }}
-                className="relative max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-xl border border-gray-200 bg-white shadow-xl"
+                className="relative max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white shadow-xl border border-gray-200"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="sticky top-0 flex items-center justify-between border-b border-gray-200 bg-white px-6 py-4">
                   <div className="flex items-center gap-2">
-                    <FileText className="h-5 w-5 text-brand-600" />
+                    <FileText className="h-5 w-5 text-[#007aff]" />
                     <h3 className="text-base font-semibold text-gray-900">{modalDoc}</h3>
                   </div>
                   <button

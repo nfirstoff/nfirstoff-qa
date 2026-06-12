@@ -35,7 +35,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-gray-200 bg-white/90 backdrop-blur-md shadow-sm"
+          ? "glass-nav shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -47,7 +47,7 @@ export default function Navbar() {
             scrolled ? "text-gray-900" : "text-white"
           }`}
         >
-          <span className="text-brand-600">MF</span>
+          <span className="text-[#007aff]">MF</span>
           <span className="ml-0.5">.</span>
         </a>
 
@@ -59,8 +59,8 @@ export default function Navbar() {
               onClick={(e) => handleClick(e, link.href)}
               className={`text-sm font-medium transition-colors duration-200 ${
                 scrolled
-                  ? "text-gray-500 hover:text-brand-600"
-                  : "text-gray-300 hover:text-white"
+                  ? "text-gray-500 hover:text-[#007aff]"
+                  : "text-gray-700 hover:text-[#007aff]"
               }`}
             >
               {link.label}
@@ -71,7 +71,7 @@ export default function Navbar() {
         <button
           onClick={() => setOpen(!open)}
           className={`flex items-center justify-center transition-colors lg:hidden ${
-            scrolled ? "text-gray-600 hover:text-brand-600" : "text-gray-300 hover:text-white"
+            scrolled ? "text-gray-600 hover:text-[#007aff]" : "text-gray-600 hover:text-[#007aff]"
           }`}
           aria-label="Menu"
         >
@@ -85,7 +85,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-t border-gray-200 bg-white lg:hidden"
+            className="overflow-hidden glass-card lg:hidden"
           >
             <div className="flex flex-col gap-1 px-4 py-3">
               {links.map((link) => (
@@ -93,7 +93,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleClick(e, link.href)}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-brand-600"
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-white/70 hover:text-[#007aff]"
                 >
                   {link.label}
                 </a>

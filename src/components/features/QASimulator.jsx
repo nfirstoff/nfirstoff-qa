@@ -23,12 +23,12 @@ function CollapsibleCategory({ category, items, index }) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
-      className="border border-gray-200 rounded-lg overflow-hidden"
+      className="border border-white/60 rounded-xl overflow-hidden bg-white/30 backdrop-blur-sm"
     >
       <button
         onClick={() => setOpen(!open)}
         className={`flex w-full items-center justify-between gap-3 px-4 py-3 text-left transition-colors ${
-          open ? "bg-gray-50 border-b border-gray-200" : "hover:bg-gray-50"
+          open ? "bg-white/50 border-b border-white/60" : "hover:bg-white/40"
         }`}
       >
         <span className="flex items-center gap-2.5 text-sm font-medium text-gray-700">
@@ -90,8 +90,8 @@ export default function QASimulator() {
                 onClick={() => setSelectedFeature(feature)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
                   selectedFeature.id === feature.id
-                    ? "bg-brand-600 text-white shadow-sm"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                ? "bg-[#007aff] text-white shadow-sm"
+                : "bg-white/65 backdrop-blur-md text-gray-600 hover:bg-white/90 border border-white/60"
                 }`}
               >
                 {feature.name}
@@ -107,8 +107,8 @@ export default function QASimulator() {
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-                <div className="border-b border-gray-200 bg-gradient-to-r from-brand-50 to-blue-50 px-6 py-5">
+              <div className="rounded-2xl glass-card overflow-hidden">
+                <div className="border-b border-white/60 bg-gradient-to-r from-[#007aff]/5 to-[#30b0c7]/5 px-6 py-5">
                   <h3 className="text-lg font-semibold text-gray-900">
                     Testing Breakdown: {selectedFeature.name}
                   </h3>
@@ -132,7 +132,7 @@ export default function QASimulator() {
                   })}
                 </div>
 
-                <div className="border-t border-gray-200 bg-gray-50 px-6 py-4">
+                <div className="border-t border-white/60 bg-white/40 px-6 py-4">
                   <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
                     <span className="flex items-center gap-1">
                       <span className="h-2 w-2 rounded-full bg-emerald-400" />

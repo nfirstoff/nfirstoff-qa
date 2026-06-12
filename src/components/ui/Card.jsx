@@ -14,7 +14,7 @@ export default function Card({
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.4 }}
       whileHover={hover ? { y: -4 } : undefined}
-      className={`rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-200 ${hover ? "hover:shadow-md hover:border-gray-300" : ""} ${padding} ${className}`}
+      className={`rounded-2xl glass-card transition-all duration-200 ${hover ? "hover:shadow-lg" : ""} ${padding} ${className}`}
       {...props}
     >
       {children}

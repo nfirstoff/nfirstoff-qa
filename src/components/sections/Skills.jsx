@@ -17,13 +17,13 @@ function SkillBar({ name, level, index }) {
         </span>
         <span className="text-xs font-mono text-gray-400">{level}%</span>
       </div>
-      <div className="h-2 overflow-hidden rounded-full bg-gray-100">
+      <div className="h-2 overflow-hidden rounded-full bg-gray-200/50">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: index * 0.04, ease: "easeOut" }}
-          className="h-full rounded-full bg-brand-500"
+          className="h-full rounded-full bg-gradient-to-r from-[#007aff] to-[#30b0c7]"
         />
       </div>
     </motion.div>
@@ -47,7 +47,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.4 }}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8"
+              className="rounded-2xl glass-card p-6 sm:p-8"
             >
               <h3 className="mb-5 text-base font-semibold text-gray-900">
                 {category.name}

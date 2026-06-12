@@ -12,7 +12,7 @@ export default function QAToolbox() {
   }
 
   return (
-    <section id="toolbox" className="relative px-4 py-24 sm:py-32 bg-gray-50/50">
+    <section id="toolbox" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="My QA Toolbox"
@@ -30,8 +30,8 @@ export default function QAToolbox() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.3 }}
-                className={`rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-200 ${
-                  isExpanded ? "shadow-md" : "hover:shadow-md"
+                className={`rounded-2xl glass-card transition-all duration-200 ${
+                  isExpanded ? "shadow-lg" : ""
                 }`}
               >
                 <button
@@ -40,7 +40,7 @@ export default function QAToolbox() {
                 >
                   <div className="flex items-center gap-3">
                     <div
-                      className="flex h-10 w-10 items-center justify-center rounded-lg"
+                      className="flex h-10 w-10 items-center justify-center rounded-xl backdrop-blur-md"
                       style={{ backgroundColor: `${tool.color}15` }}
                     >
                       <Wrench className="h-5 w-5" style={{ color: tool.color }} />
@@ -65,7 +65,7 @@ export default function QAToolbox() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <div className="border-t border-gray-100 px-5 py-4 space-y-4">
+                      <div className="border-t border-white/40 px-5 py-4 space-y-4">
                         <div>
                           <h4 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1.5">
                             <CheckCircle2 className="h-3 w-3 text-emerald-500" />
@@ -97,9 +97,9 @@ export default function QAToolbox() {
                           </ul>
                         </div>
 
-                        <div className="rounded-lg bg-brand-50 border border-brand-100 p-3">
-                          <p className="text-xs font-medium text-brand-800">Why It Matters</p>
-                          <p className="mt-0.5 text-xs text-brand-700">{tool.whyItMatters}</p>
+                        <div className="rounded-xl bg-[#007aff]/10 border border-[#007aff]/15 p-3 backdrop-blur-sm">
+                          <p className="text-xs font-medium text-[#007aff]">Why It Matters</p>
+                          <p className="mt-0.5 text-xs text-[#007aff]/80">{tool.whyItMatters}</p>
                         </div>
                       </div>
                     </motion.div>
