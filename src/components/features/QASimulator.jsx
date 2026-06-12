@@ -90,7 +90,7 @@ export default function QASimulator() {
                 onClick={() => setSelectedFeature(feature)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
                   selectedFeature.id === feature.id
-                ? "bg-[#007aff] text-white shadow-sm"
+                ? "bg-[#007aff] text-[#ffffff] shadow-sm"
                 : "bg-white/65 backdrop-blur-md text-gray-600 hover:bg-white/90 border border-white/60"
                 }`}
               >

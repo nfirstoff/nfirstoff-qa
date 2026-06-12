@@ -161,9 +161,9 @@ export default function BugGame() {
                       >
                         <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-xs font-medium ${
                           showResult && isCorrect
-                            ? "border-[#34c759] bg-[#34c759] text-white"
+                            ? "border-[#34c759] bg-[#34c759] text-[#ffffff]"
                             : showResult && isSelected && !isCorrect
-                            ? "border-[#ff3b30] bg-[#ff3b30] text-white"
+                            ? "border-[#ff3b30] bg-[#ff3b30] text-[#ffffff]"
                             : "border-gray-300 text-gray-500"
                         }`}>
                           {showResult && isCorrect ? "✓" : showResult && isSelected && !isCorrect ? "✗" : option.id.toUpperCase()}

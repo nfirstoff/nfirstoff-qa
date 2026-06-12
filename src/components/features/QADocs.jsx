@@ -112,7 +112,7 @@ function BugReportPreview({ doc }) {
       {data.logs && (
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">Logs</p>
-          <pre className="rounded-xl bg-gray-900/90 backdrop-blur-sm p-3 text-xs text-green-400 font-mono overflow-x-auto border border-white/10">{data.logs}</pre>
+          <pre className="rounded-xl bg-[var(--code-bg)] backdrop-blur-sm p-3 text-xs text-green-400 font-mono overflow-x-auto border border-white/10">{data.logs}</pre>
         </div>
       )}
     </div>
@@ -138,7 +138,7 @@ function ChecklistPreview({ doc }) {
       <div className="flex items-center gap-3">
         <h4 className={`text-base font-semibold transition-colors ${allChecked ? "text-emerald-600" : "text-gray-900"}`}>{data.title}</h4>
         {allChecked && (
-          <span className="inline-block rounded-md bg-emerald-500 px-2.5 py-0.5 text-xs font-bold text-white">
+          <span className="inline-block rounded-md bg-emerald-500 px-2.5 py-0.5 text-xs font-bold text-[#ffffff]">
             Passed
           </span>
         )}
@@ -158,7 +158,7 @@ function ChecklistPreview({ doc }) {
                 >
                   <span
                     className={`mt-1 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded border transition-colors ${
-                      isChecked ? "border-brand-500 bg-brand-500 text-white" : "border-gray-300"
+                      isChecked ? "border-brand-500 bg-brand-500 text-[#ffffff]" : "border-gray-300"
                     }`}
                   >
                     {isChecked && (
@@ -313,10 +313,10 @@ export default function QADocs() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 10 }}
                 transition={{ duration: 0.2 }}
-                className="relative max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white shadow-xl border border-gray-200"
+                className="relative max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-[var(--modal-bg)] shadow-xl border border-[var(--modal-border)]"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="sticky top-0 flex items-center justify-between border-b border-gray-200 bg-white px-6 py-4">
+                <div className="sticky top-0 flex items-center justify-between border-b border-[var(--modal-border)] bg-[var(--modal-bg)] px-6 py-4">
                   <div className="flex items-center gap-2">
                     <FileText className="h-5 w-5 text-[#007aff]" />
                     <h3 className="text-base font-semibold text-gray-900">{modalDoc}</h3>
@@ -335,7 +335,7 @@ export default function QADocs() {
                     return PreviewComponent ? <PreviewComponent doc={sample} /> : null
                   })()}
                 </div>
-                <div className="border-t border-gray-200 px-6 py-4 flex justify-end">
+                <div className="border-t border-[var(--modal-border)] px-6 py-4 flex justify-end">
                   <Button variant="secondary">
                     <Download className="h-4 w-4" />
                     Download {docSamples[modalDoc]?.type || "Document"}

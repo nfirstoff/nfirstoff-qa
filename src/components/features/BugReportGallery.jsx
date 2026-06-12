@@ -168,7 +168,7 @@ export default function BugReportGallery() {
                         {report.sections.technicalDetails.code && (
                           <div>
                             <p className="text-xs font-medium text-gray-700 mb-1">Code:</p>
-                            <pre className="rounded-xl bg-gray-900/90 backdrop-blur-sm p-3 text-xs text-green-400 overflow-x-auto font-mono leading-relaxed border border-white/10">
+                            <pre className="rounded-xl bg-[var(--code-bg)] backdrop-blur-sm p-3 text-xs text-green-400 overflow-x-auto font-mono leading-relaxed border border-white/10">
                               {report.sections.technicalDetails.code}
                             </pre>
                           </div>
@@ -177,13 +177,13 @@ export default function BugReportGallery() {
                           <div className="grid gap-2 sm:grid-cols-2">
                             <div>
                               <p className="text-xs font-medium text-gray-700 mb-1">Request:</p>
-                              <pre className="rounded-xl bg-gray-900/90 backdrop-blur-sm p-3 text-xs text-blue-300 overflow-x-auto font-mono leading-relaxed border border-white/10">
+                              <pre className="rounded-xl bg-[var(--code-bg)] backdrop-blur-sm p-3 text-xs text-blue-300 overflow-x-auto font-mono leading-relaxed border border-white/10">
                                 {report.sections.technicalDetails.apiExample.request}
                               </pre>
                             </div>
                             <div>
                               <p className="text-xs font-medium text-gray-700 mb-1">Response:</p>
-                              <pre className="rounded-xl bg-gray-900/90 backdrop-blur-sm p-3 text-xs text-green-300 overflow-x-auto font-mono leading-relaxed border border-white/10">
+                              <pre className="rounded-xl bg-[var(--code-bg)] backdrop-blur-sm p-3 text-xs text-green-300 overflow-x-auto font-mono leading-relaxed border border-white/10">
                                 {report.sections.technicalDetails.apiExample.response}
                               </pre>
                             </div>

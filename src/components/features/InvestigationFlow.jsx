@@ -84,7 +84,7 @@ export default function InvestigationFlow() {
                     <div className="relative z-10 flex w-2/12 justify-center">
                       <div className={`flex h-8 w-8 items-center justify-center rounded-full border-2 text-xs font-bold transition-colors ${
                         isActive
-                          ? "border-[#007aff] bg-[#007aff] text-white"
+                          ? "border-[#007aff] bg-[#007aff] text-[#ffffff]"
                           : "border-white/60 bg-white/65 text-gray-500"
                       }`}>
                         {i + 1}

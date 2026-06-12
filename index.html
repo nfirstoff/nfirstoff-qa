@@ -101,8 +101,24 @@
         "keywords": "QA Engineer, Test Engineer, Quality Assurance, Software Testing, Manual Testing, Regression Testing, API Testing, Database Validation, AI in QA, Fintech QA, Payment Systems QA"
       }
     </script>
+    <script>
+      (function() {
+        var theme = 'light';
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'dark' || saved === 'light') {
+            theme = saved;
+          } else {
+            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+        } catch(e) {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
   </head>
-  <body class="bg-white text-gray-900 antialiased">
+  <body class="antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

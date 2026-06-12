@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import ThemeToggle from "../features/ThemeToggle"
 
 const links = [
   { href: "#hero", label: "Home" },
@@ -44,7 +45,7 @@ export default function Navbar() {
           href="#hero"
           onClick={(e) => handleClick(e, "#hero")}
           className={`text-lg font-bold tracking-tight transition-colors ${
-            scrolled ? "text-gray-900" : "text-white"
+            scrolled ? "text-gray-900" : "text-[#ffffff]"
           }`}
         >
           <span className="text-[#007aff]">MF</span>
@@ -68,6 +69,9 @@ export default function Navbar() {
           ))}
         </div>
 
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+
         <button
           onClick={() => setOpen(!open)}
           className={`flex items-center justify-center transition-colors lg:hidden ${
@@ -77,6 +81,7 @@ export default function Navbar() {
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
+        </div>
       </div>
 
       <AnimatePresence>
