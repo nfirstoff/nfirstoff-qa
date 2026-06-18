@@ -13,6 +13,7 @@ export const profile = {
     { value: "4", label: "Industry Domains" },
     { value: "20+", label: "Tools & Technologies" },
     { value: "50+", label: "Projects Delivered" },
+    { value: "250+", label: "PSP Integrations" },
   ],
   strengths: [
     "High Ownership",

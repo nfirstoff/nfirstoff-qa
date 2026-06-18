@@ -71,7 +71,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
               {profile.stats.map((stat, i) => (
                 <StatCard key={stat.label} stat={stat} index={i} />
               ))}
